@@ -3,7 +3,7 @@
 # Date : 11/18/2019
 # Krutik Rana
 # Program description : Seperate file for Characters
-
+from locations import *
 
 def all_characters():
     """Commands to list out characters and enemies of the game"""
@@ -58,3 +58,35 @@ enemies = {'Salmon': {'HP': 10, 'Attack': 2},
            'Saw Shark': {'HP': 25, 'Attack': 6},
            'Ethereal Ultimatum': {'HP': 1000, 'Attack': 20}
            }
+
+
+class Player:
+    """d"""
+    def __init__(self):
+        self.x = map[x]
+        self.y = map[y]
+        self.hp = 100
+
+    def alive(self):
+        return self.hp > 0
+
+    def move(self, dx, dy):
+        """Define player movement"""
+        self.x += dx
+        self.y += dy
+
+    def move_north(self):
+        """Define forward movement"""
+        self.move(dx=0, dy=-1)
+
+    def move_south(self):
+        """Define aftward movement"""
+        self.move(dx=0, dy=1)
+
+    def move_right(self):
+        """Define movement towards the starboard side"""
+        self.move(dx=1, dy=0)
+
+    def move_left(self):
+        """Define movement towards the port side"""
+        self.move(dx=-1, dy=0)

@@ -4,6 +4,8 @@
 # Krutik Rana
 # Program description : Locations in a seperate file
 from tabulate import tabulate
+from Characters import *
+
 
 # Array of the map, formated using tabulate
 
@@ -53,7 +55,8 @@ def location():
         user = user.lower()
         # Checks to see if user typed in movement command
         if user == 'north':
-            map = map[y-1][x-1]
+            map = map[y-1][x]
+            map.update()
             # prints out Movement
             print('Travelling North!')
         # Checks to see if user typed in movement command
